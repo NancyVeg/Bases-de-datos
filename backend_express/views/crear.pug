@@ -1,0 +1,56 @@
+head
+  meta(charset='utf-8')
+  title Register
+
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+
+  body
+    
+  .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true")
+              span.sr-only Close
+            h1#myModalLabel.modal-title
+              | MANDE
+          // Modal Body
+          .modal-body
+            form(id='usuario' name='usuario' role='form' method='POST')
+                .form-group
+                  input(type='text', placeholder='' name='nombre' required)
+                  span(class='barra')
+                  label(for='nombre') Nombre
+                .form-group            
+                  input(type='text', placeholder='' name='apellido' required)
+                  span(class='barra')
+                  label(for='apellido') Apellido
+                .form-group 
+                  input(type='number', placeholder='' name='cedula' required)
+                  span(class='barra')
+                  label(for='cedula') Cédula
+                .form-group 
+                  input(type='text', placeholder='' name='direccion' required)
+                  span(class='barra')
+                  label(for='direccion') Dirección
+                .form-group
+                  input(type='text', placeholder='' name='email' required)
+                  span(class='barra')
+                  label(for='email') Email
+                .form-group 
+                  input(type='text', placeholder='' name='telefono' required)
+                  span(class='barra')
+                  label(for='telefono') Teléfono
+                .form-group
+                  input(type='password', placeholder='' name='password' required)
+                  span(class='barra')
+                  label(for='password') Contraseña
+                form(action='./storage/image' method='post' enctype="multipart/form-data" target='_blank' accept ='.pdf')
+                  input(type='file' name='archivonuevo')
+                  button(type='submit') Next
+          // Modal Footer
+          .modal-footer
+            h4 REGISTER

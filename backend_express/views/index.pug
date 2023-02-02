@@ -1,0 +1,28 @@
+head
+  meta(charset='utf-8')
+  title Bienvenida
+
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+  .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true")
+              span.sr-only Close
+            h1#myModalLabel.modal-title
+              | MANDE
+          // Modal Body
+          .modal-body
+                    <div class="titulo"> Bienvenido
+                    </div>
+                    <hr>
+                        <a href="http://localhost:3000/login">¿Ya tienes Cuenta? Inicia Sesión</a>
+                        br
+                        <a href="http://localhost:3000/typeuser">¿No tienes Cuenta? Registrate</a>
+
+
+  

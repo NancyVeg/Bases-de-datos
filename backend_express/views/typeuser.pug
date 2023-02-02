@@ -1,0 +1,32 @@
+head
+  meta(charset='utf-8')
+  title Register
+
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  
+  style label2{background: whitesmoke; padding: 0.5em 1em; cursor: pointer;}
+  style label2:hover{ background: gray; color: white;}
+  //link(rel='stylesheet', type="text/css", href='views/style.css')
+
+  body 
+
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true")
+              span.sr-only Close
+            h1#myModalLabel.modal-title
+              | MANDE
+          // Modal Body
+          .modal-body
+            span ¿CÓMO TE QUIERES REGISTRAR?
+            form(role='form' action='http://localhost:3000/crear')
+              button.btn.btn-primary(type="submit", name="asdf") CLIENTE
+            form(role='form' action='http://localhost:3000/creartrabajador')
+              button.btn.btn-primary(type="submit", name="asdf") TRABAJADOR
+          // Modal Footer
+          .modal-footer
+            h4 REGISTER

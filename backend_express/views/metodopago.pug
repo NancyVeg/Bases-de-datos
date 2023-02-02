@@ -1,0 +1,40 @@
+head
+  meta(charset='utf-8')
+  title Register
+
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css')
+
+
+body 
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true")
+              span.sr-only Close
+            h1#myModalLabel.modal-title
+              | MANDE
+          // Modal Body
+          .modal-body
+            form(role='form')
+              .modal-content MÉTODO DE PAGO
+                <div class="form-group">
+                  <div class="card">
+
+                  <img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
+                  label3 Card number
+                  input(id="user" type="text" class="input cardnumber"  placeholder="1234 5678 9101 1121" required)
+                  label3 Name: 
+                  input(class="input name"  placeholder="" required)
+                  label3(class="toleft") CCV:
+                  input(class="input toleft ccv" placeholder="" required)
+                  </div>
+                  
+                </div>
+
+                button(type='submit' formaction='http://localhost:3000/login') Registrar
+          // Modal Footer
+          .modal-footer
+            h4 LOGIN

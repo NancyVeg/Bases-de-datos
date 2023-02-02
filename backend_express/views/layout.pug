@@ -1,0 +1,110 @@
+doctype html
+
+
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/usuario.css')
+
+  body
+    block content
+      .container
+        .rf
+          div 
+            h1 MANDE
+            form(role='form' method='POST')
+              select.form-control(name='labor')
+                option(value=0, selected=true) Elige una labor
+                each user in users
+                  option(value=user.nombrelabor)= user.nombrelabor
+              br
+              label(for='precio') Precio
+              input(type='text' placeholder='Selecciona un precio máximo' name='precio' value='')            
+              br
+              button.btn.btn-primary(type="submit", name="filtros") Aplicar/eliminar filtros
+              .modal-content Registro de pagos
+                .modal-header Pagos
+                  .modal-content
+                    each registro in registros
+                      span='Labor: ' + registro.nombrelabor + ' Costo: ' + registro.preciohora
+                      br
+                    
+          .cont-user     
+              form(role='form' method='POST')       
+                each user in users  
+                  .users-box   
+                    .user-description   
+                      span.user-name= 'NOMBRE: '+user.nombre + ' '
+                      span='APELLIDO: ' +user.apellido + ' '
+                      br
+                      span='CALIFICACION: ' + user.estrellas
+                      br
+                      if user.ocupado==true
+                        span='OCUPADO' 
+                      else 
+                        span='DISPONIBLE'
+                      br
+                      span='DIRECCION: ' +user.direccion + ' '
+                      br
+                      span='LABOR: '+user.nombrelabor + ' '
+                      br
+                      span='Precio por hora: ' + user.preciohora + ' '
+                      br 
+                      button.btn.btn-primary(type="submit" name='elegirTrabajador' value=user.id_trabajador) Solicitar
+                    .modal-content CALIFIQUE EL SERVICIO
+                      .modal-container DESPUÉS DE SOLICITARLO
+                        .star-source
+                          <svg>¿
+                                <linearGradient x1="50%" y1="5.41294643%" x2="87.5527344%" y2="65.4921875%" id="grad">
+                                    <stop stop-color="#eeb800" offset="0%"></stop>
+                                    <stop stop-color="#eeb800" offset="60%"></stop>
+                                    <stop stop-color="#eeb800" offset="100%"></stop>
+                                </linearGradient>
+                          <symbol id="star" viewBox="153 89 106 108">   
+                              <polygon id="star-shape" stroke="url(#grad)" stroke-width="8" fill="currentColor" points="206 162.5 176.610737 185.45085 189.356511 150.407797 158.447174 129.54915 195.713758 130.842203 206 95 216.286242 130.842203 253.552826 129.54915 222.643489 150.407797 235.389263 185.45085"></polygon>
+                          </symbol>
+                          </svg>
+
+                        .star-container
+                          <input type="submit" name="star" id="five" value=5>
+                          <label for="five">
+                            <svg class="star">
+                              <use xlink:href="#star"/>
+                            </svg>
+                          </label>
+                          <input type="submit" name="star" id="four" value=4>
+                          <label for="four">
+                            <svg class="star">
+                              <use xlink:href="#star"/>
+                            </svg>
+                          </label>
+                          <input type="submit" name="star" id="three" value=3>
+                          <label for="three">
+                            <svg class="star">
+                              <use xlink:href="#star"/>
+                            </svg>
+                          </label>
+                          <input type="submit" name="star" id="two" value=2>
+                          <label for="two">
+                            <svg class="star">
+                              <use xlink:href="#star" />
+                            </svg>
+                          </label>
+                          <input type="submit" name="star" id="one" value=1>
+                          <label for="one">
+                          <svg class="star">
+                            <use xlink:href="#star" />
+                          </svg>  
+                          </label>   
+                    .user-image
+                     img(src="https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-800x419.jpg", alt="")           
+                <!  -- If imagen es vacía avatar por defecto else la imagen guardad en la db
+                  
+                  
+                
+                
+                
+                
+                
+

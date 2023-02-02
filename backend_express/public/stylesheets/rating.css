@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+  }
+  
+html,
+body {
+    height: 100%;
+}
+  
+.modal-header{  
+    font-family:'Lato';
+    color: #FCCD00;
+    background-color: #DEDCDA;
+    padding: 0px;
+    border-color: #4286f4;
+    background: #D3CCE3; 
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3); 
+  }
+  
+body{
+    background: #373B44; 
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  
+    background: linear-gradient(to right, #4286f4, #373B44); 
+    
+}
+  
+  
+.modal-dialog{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    background: #D3CCE3;  
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3); 
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3); 
+  
+}
+  
+.modal-content{
+    color: #000000;
+    background-color: #DEDCDA;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    background: #D3CCE3;  
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3); 
+    text-align: center;
+}
+
+
+button{
+    font-family: 'roboto';
+    background: #373B44;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4286f4, #373B44);
+    border:none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: white;
+    height: 40px;
+    font-size: 16px;
+}
+
+h1{
+    font-family:'Mouse Memoirs'; 
+    font-size: 50px; 
+    text-align: center;
+}
+
+label {
+    cursor: pointer;
+}
+  
+svg {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.15rem;
+}
+  
+input[name="star"] {
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+    margin-left: 5px;
+}
+  
+.star-source {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+  
+  
+.star {
+    color: transparent;
+    transition: color 0.2s ease-in-out;
+    
+}
+  
+  
+.star-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+  
+label:hover ~ label .star,
+svg.star:hover,
+input[name="star"]:focus ~ label .star,
+input[name="star"]:checked ~ label .star {
+    color: #ffe600;
+}
+  
+input[name="star"]:checked + label .star {
+    animation: starred 0.5s;
+}
+  
+input[name="star"]:checked + label {
+    animation: scaleup 1s;
+}
+  
+@keyframes scaleup {
+    from {
+      transform: scale(1.4);
+    }
+    to {
+      transform: scale(1);
+    }
+}
+  
+@keyframes starred {
+    from {
+      color: #ffa600;
+    }
+    to {
+      color: #ffc402;
+    }
+  } 
+

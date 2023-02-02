@@ -1,0 +1,71 @@
+head
+  meta(charset='utf-8')
+  title Register
+
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css')
+
+
+  body 
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true")
+              span.sr-only Close
+            h1#myModalLabel.modal-title
+              | MANDE
+          // Modal Body
+          .modal-body
+            form(role='form' method='POST' enctype="multipart/form-data")
+                .form-group Subir foto de perfil
+                  input(type='file', name='file', class='form-control' accept='image/*')
+                  label(for='file')
+            form(id='trabajador' name='trabajador' role='form' method='POST')
+                .form-group
+                  input(type='text', placeholder='' name='nombre' required)
+                  span(class='barra')
+                  label(for='nombre') Nombre
+                .form-group            
+                  input(type='text', placeholder='' name='apellido' required)
+                  span(class='barra')
+                  label(for='apellido') Apellido
+                .form-group 
+                  input(type='number', placeholder='' name='cedula' required)
+                  span(class='barra')
+                  label(for='cedula') Cédula
+                .form-group 
+                  input(type='text', placeholder='' name='direccion' required)
+                  span(class='barra')
+                  label(for='direccion') Dirección
+                .form-group 
+                  input(type='text', placeholder='' name='telefono' required)
+                  span(class='barra')
+                  label(for='telefono') Teléfono
+                .form-group
+                  input(type='password', placeholder='' name='password' required)
+                  span(class='barra')
+                  label(for='') Contraseña
+                .form-group 
+                  input(type='number', placeholder='' name='precioHora' required)
+                  span(class='barra')
+                  label(for='precioHora') Precio por hora trabajada
+                .modal-content Escoge una labor
+                  span(class='barra')
+                    select(name='nombreLabor' required)
+                      option(value='Cerrajero') Cerrajero
+                      option(value='Profesor de inglés') Profesor de inglés
+                      option(value='Conductor') Conductor
+                      option(value='Cuidar Mascotas') Cuidar Mascotas
+                      option(value='Profesor') Profesor
+                      option(value='Control de plagas') Control de plagas
+                      ooption(value='Plomero') Plomero
+                button(type='submit') Next
+          // Modal Footer
+          .modal-footer
+            h4 REGISTER
+      
+                  
+
+    

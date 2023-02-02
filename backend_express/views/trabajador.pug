@@ -1,0 +1,27 @@
+doctype html
+
+
+html
+    head
+        title= title
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+
+    body
+        block content
+        .container
+            .rf
+            div 
+                h1 TRABAJO A REALIZAR
+                .users-box
+                    form(role='form' method='POST')
+                        each user in users  
+                            each usuario in usuarios
+                                .users-box   
+                                    .user-description   
+                                        span.user-name= 'Has sido solicitado para la labor: '+ user.nombrelabor
+                                        span.user-name='Dirección de la solicitud: ' + usuario.direccion
+                                        button.btn.btn-primary(type="submit" name='terminarLabor' value=user.id_trabajador) Labor terminada
+                                        break
+                            
+                            
